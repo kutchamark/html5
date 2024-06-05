@@ -1,1 +1,83 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tonkhao Code</title>
+    <!-- Bootstrap 5 CSS idk -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS ya kae -->
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Ratthapong Diewwilai <br> NO.12 <br> 3/3</h1>
+        <form class="mt-4">
+            <div class="mb-3">
+                <label for="num1" class="form-label">Number 1</label>
+                <input type="number" class="form-control" id="num1" required>
+            </div>
+            <div class="mb-3">
+                <label for="num2" class="form-label">Number 2</label>
+                <input type="number" class="form-control" id="num2" required>
+            </div>
+            <div class="mb-3">
+                <label for="num3" class="form-label">Number 3</label>
+                <input type="number" class="form-control" id="num3" required>
+            </div>
+            <div class="mb-3">
+                <label for="num4" class="form-label">Number 4</label>
+                <input type="number" class="form-control" id="num4" required>
+            </div>
+            <div class="mb-3">
+                <label for="num5" class="form-label">Number 5</label>
+                <input type="number" class="form-control" id="num5" required>
+            </div>
+            <div class="mb-3">
+                <label for="num6" class="form-label">Number 6</label>
+                <input type="number" class="form-control" id="num6" required>
+            </div>
+            <div class="mb-3">
+                <label for="num7" class="form-label">Number 7</label>
+                <input type="number" class="form-control" id="num7" required>
+            </div>
+            <div class="mb-3">
+                <label for="num8" class="form-label">Number 8</label>
+                <input type="number" class="form-control" id="num8" required>
+            </div>
+            <div class="mb-3">
+                <label for="num9" class="form-label">Number 9</label>
+                <input type="number" class="form-control" id="num9" required>
+            </div>
+            <div class="mb-3">
+                <label for="num10" class="form-label">Number 10</label>
+                <input type="number" class="form-control" id="num10" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="calculateSum()">Calculate Sum</button>
+        </form>
+        <h2 id="tonkhao" class="mt-4">Sum: </h2>
+    </div>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+    <script>
+        function calculateSum() {
+            let sum = 0;
+            for (let i = 1; i <= 10; i++) {
+                let number = parseFloat(document.getElementById('num' + i).value);
+                if (!isNaN(number)) {
+                    sum += number;
+                }
+            }
+            document.getElementById('tonkhao').innerText = 'Sum: ' + sum;
+            Swal.fire({
+                title: 'Calculation Result',
+                text: 'The sum is: ' + sum,
+                icon: 'success',
+                confirmButtonText: 'OK'
+            });
+        }
+    </script>
+</body>
+</html>
